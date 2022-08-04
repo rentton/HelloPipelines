@@ -3,11 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- master
 
+trigger:
+# Mario: The branch of the repository where the pipeline is executed. Master branch.
+- master
+# If I write 
+#     - something 
+#it will execute in something branch
+
+#Where it's going to execute
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest'    #Ubuntu latest version
+
 
 container: mcr.microsoft.com/dotnet/core/sdk:3.0
 
@@ -20,3 +27,4 @@ steps:
   inputs:
     command: 'test'
     projects: '**/*Tests*.csproj'
+
